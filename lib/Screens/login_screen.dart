@@ -70,10 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const RegisterScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => RegisterScreen()));
                 },
                 child: const Text(
                   'Login',
