@@ -1,4 +1,4 @@
-package com.example.flutter_pretest_navigation
+package com.example.flutter_coding_calendar
 
 import io.flutter.embedding.android.FlutterActivity
 

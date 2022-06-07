@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(flutter_pretest_navigation LANGUAGES CXX)
+project(flutter_coding_calendar LANGUAGES CXX)
 
-set(BINARY_NAME "flutter_pretest_navigation")
+set(BINARY_NAME "flutter_coding_calendar")
 
 cmake_policy(SET CMP0063 NEW)
 
