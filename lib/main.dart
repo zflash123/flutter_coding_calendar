@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_coding_calendar/Screens/register_screen.dart';
 
 import 'Screens/login_screen.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const LoginScreen(),
+      home: RegisterScreen(),
     );
   }
 }
