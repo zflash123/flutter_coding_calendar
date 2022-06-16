@@ -2,8 +2,8 @@ import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-
-import '../ProjectsPage/ProgressCard.dart';
+import 'AddNewTask.dart';
+import 'ProgressCard.dart';
 
 class TasksPage extends StatefulWidget {
   const TasksPage({
