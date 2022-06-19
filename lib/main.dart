@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_coding_calendar/Screens/login_screen.dart';
 import 'package:flutter_coding_calendar/Screens/register_screen.dart';
 import 'package:flutter_coding_calendar/Screens/user_screen.dart';
-
-import 'Screens/login_screen.dart';
+import 'package:flutter_coding_calendar/Screens/home_screen.dart';
+import 'package:flutter_coding_calendar/Screens/AddNewTask.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,10 +25,21 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: "Muli",
       ),
-      home: UserScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(
+              Goback: (int) {},
+            ),
+        '/register': (context) => RegisterScreen(
+              Goback: (int) {},
+            ),
+        '/home': (context) => TasksPage(
+              Goback: (int) {},
+            ),
+        '/add': (context) => AddNewTask(),
+        '/user': (context) => UserScreen(),
+      },
     );
   }
 }
