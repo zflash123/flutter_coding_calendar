@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_coding_calendar/Screens/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({Key? key}) : super(key: key);
+  RegisterScreen({Key? key, required Null Function(dynamic int) Goback})
+      : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -70,15 +72,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(30, 0, 15, 115),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size.fromHeight(50),
+                height: 50,
+                width: 250,
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(20)),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => LoginScreen(
+                                  Goback: (int) {},
+                                )));
+                  },
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
-                  onPressed: () {},
-                  child: Text('CREATE ACCOUNT'),
                 ),
-              )
+              ),
             ],
           ),
         ),

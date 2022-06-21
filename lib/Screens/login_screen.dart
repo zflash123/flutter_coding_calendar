@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'register_screen.dart';
+import 'home_screen.dart';
+import 'package:flutter_coding_calendar/Screens/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key, required Null Function(dynamic int) Goback})
+      : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -63,15 +65,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(color: Colors.blue, fontSize: 15),
               ),
             ),
+            SizedBox(
+              height: 20,
+              width: 20.0,
+            ),
             Container(
+              margin: EdgeInsets.all(8.0),
               height: 50,
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => RegisterScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => TasksPage(
+                                Goback: (int) {},
+                              )));
                 },
                 child: const Text(
                   'Login',
@@ -79,10 +90,31 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 130,
+            // const SizedBox(
+            //   height: 130,
+            // ),
+            // const Text('New User? Create Account'),
+
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => RegisterScreen(
+                                Goback: (int) {},
+                              )));
+                },
+                child: const Text(
+                  'Register',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
             ),
-            const Text('New User? Create Account')
           ],
         ),
       ),
