@@ -13,7 +13,7 @@ class Network {
 
   auth(data, apiURL) async {
     var fullUrl = _url + apiURL;
-    return await http.post(fullUrl,
+    return await http.post(Uri.parse(fullUrl),
         body: jsonEncode(data), headers: _setHeaders());
   }
 
@@ -21,7 +21,7 @@ class Network {
     var fullUrl = _url + apiURL;
     await _getToken();
     return await http.get(
-      fullUrl,
+      Uri.parse(fullUrl),
       headers: _setHeaders(),
     );
   }
