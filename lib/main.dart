@@ -28,15 +28,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreen(
-              Goback: (int) {},
-            ),
-        '/register': (context) => RegisterScreen(
-              Goback: (int) {},
-            ),
-        '/home': (context) => TasksPage(
-              Goback: (int) {},
-            ),
+        '/': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
+        '/home': (context) => TasksPage(),
         '/add': (context) => AddNewTask(),
         '/user': (context) => UserScreen(),
       },
