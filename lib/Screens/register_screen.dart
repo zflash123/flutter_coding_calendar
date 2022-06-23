@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_coding_calendar/Screens/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({Key? key, required Null Function(dynamic int) Goback})
+  RegisterScreen({Key? key,})
       : super(key: key);
 
   @override
@@ -82,9 +82,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => LoginScreen(
-                                  Goback: (int) {},
-                                )));
+                            builder: (_) => LoginScreen()));
                   },
                   child: const Text(
                     'Login',

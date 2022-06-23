@@ -8,9 +8,7 @@ import 'ProgressCard.dart';
 class TasksPage extends StatefulWidget {
   const TasksPage({
     Key? key,
-    required this.Goback,
   }) : super(key: key);
-  final void Function(int) Goback;
   @override
   State<TasksPage> createState() => _TasksPageState();
 }
@@ -47,7 +45,7 @@ class _TasksPageState extends State<TasksPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          widget.Goback(1);
+                          // widget.Goback(1);
                         },
                         child: Icon(
                           Icons.arrow_back_rounded,
