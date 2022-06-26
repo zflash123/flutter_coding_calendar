@@ -168,9 +168,7 @@ class UserScreen extends StatelessWidget {
               color: Color(0xFFF5F6F9),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return LoginScreen(
-                    Goback: (int) {},
-                  );
+                  return LoginScreen();
                 }));
               },
               child: Row(

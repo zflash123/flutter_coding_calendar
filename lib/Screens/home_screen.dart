@@ -9,7 +9,6 @@ import 'bottom_navigation.dart';
 class TasksPage extends StatefulWidget {
   const TasksPage({
     Key? key,
-    required Null Function(dynamic int) Goback,
   }) : super(key: key);
   @override
   State<TasksPage> createState() => _TasksPageState();
