@@ -4,10 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'AddNewTask.dart';
 import 'ProgressCard.dart';
+import 'bottom_navigation.dart';
 
 class TasksPage extends StatefulWidget {
   const TasksPage({
     Key? key,
+    required Null Function(dynamic int) Goback,
   }) : super(key: key);
   @override
   State<TasksPage> createState() => _TasksPageState();
@@ -23,9 +25,9 @@ class _TasksPageState extends State<TasksPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        color: Color.fromRGBO(242, 244, 255, 1),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -108,11 +110,13 @@ class _TasksPageState extends State<TasksPage> {
                     ],
                   ),
                   SizedBox(height: 25),
-                  DatePicker(
-                    DateTime.now(),
-                    initialSelectedDate: this._selectedDate,
-                    selectionColor: Color.fromARGB(255, 123, 0, 245),
-                    onDateChange: this._onDateChange,
+                  SizedBox(
+                    child: DatePicker(
+                      DateTime.now(),
+                      initialSelectedDate: this._selectedDate,
+                      selectionColor: Color.fromARGB(255, 123, 0, 245),
+                      onDateChange: this._onDateChange,
+                    ),
                   )
                 ],
               ),
@@ -141,6 +145,14 @@ class _TasksPageState extends State<TasksPage> {
                           ProjectName: "Project", CompletedPercent: 30),
                       ProgressCard(
                           ProjectName: "Project", CompletedPercent: 30),
+                      ProgressCard(
+                          ProjectName: "Project", CompletedPercent: 30),
+                      ProgressCard(
+                          ProjectName: "Project", CompletedPercent: 30),
+                      ProgressCard(
+                          ProjectName: "Project", CompletedPercent: 30),
+                      ProgressCard(
+                          ProjectName: "Project", CompletedPercent: 30),
                     ]),
                   )
                 ],
@@ -149,6 +161,7 @@ class _TasksPageState extends State<TasksPage> {
           ],
         ),
       ),
+      bottomNavigationBar: MyNavigation(),
     );
   }
 }
