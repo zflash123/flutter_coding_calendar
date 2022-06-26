@@ -31,4 +31,14 @@ class Network {
         'Accept': 'application/json',
         'Authorization': 'Bearer $token',
       };
+
+  create_event(apiURL) async {
+    var fullUrl = _url + apiURL;
+    await _getToken();
+    return await http.post(
+      Uri.parse(fullUrl),
+      headers: _setHeaders(),
+    );
+  }
+  
 }
