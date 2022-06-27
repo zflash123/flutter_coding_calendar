@@ -174,7 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     var data = {'email': email, 'password': password};
 
-    var res = await Network().auth(data, '/v1/login');
+    var res = await Network().auth(data, '/login');
     var body = json.decode(res.body);
     if (body['success']) {
       SharedPreferences localStorage = await SharedPreferences.getInstance();

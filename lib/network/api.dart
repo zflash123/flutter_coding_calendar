@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Network {
-  final String _url = 'http://127.0.0.1:8000/api';
+  final String _url = 'http://127.0.0.1:8000/api/v1';
   var token;
 
   _getToken() async {
@@ -32,13 +32,13 @@ class Network {
         'Authorization': 'Bearer $token',
       };
 
-  create_event(apiURL) async {
+  createEvent(data, apiURL) async {
     var fullUrl = _url + apiURL;
     await _getToken();
     return await http.post(
       Uri.parse(fullUrl),
       headers: _setHeaders(),
+      body: jsonEncode(data),
     );
   }
-  
 }
